@@ -1,0 +1,32 @@
+version: '2.1'
+
+networks:
+  startup-net:
+    driver: bridge
+
+services:
+
+  vncuser1:
+    image: consol/ubuntu-xfce-vnc:latest
+    container_name: vncuser1
+    ports:
+      - 5901:5901
+      - 6901:6901
+    restart: unless-stopped
+
+    networks:
+      - startup-net
+
+  portainer:
+    image: portainer/portainer
+    restart: always
+    container_name: "portainer-app"
+#    command: -H unix:///var/run/docker.sock
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /portainerdata:/data
+    ports:
+      - 9000:9000
+    networks:
+      - startup-net
