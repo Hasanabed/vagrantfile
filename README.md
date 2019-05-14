@@ -11,7 +11,6 @@ DEPLOY STARTUP SERVER
 
 	- Ubuntu Server 16.04
 	- VNC server ( 3 separate sessions available)
-	- Rocket Server containerized basic install
 	- 801.Q config for interface towards DC ( IP address of local DCGW needs to be updated manually on the Vagrantfile)
 	- Docker Compose file to orchestrate the provisioning of more services.
 	- Customize the RAM/CPU count as needed (Currently set to 16Gb RAM, 4 cores )
@@ -52,7 +51,7 @@ DEPLOY STARTUP SERVER
 ## 6-) Copy this files to  Vagrantfile to  C:\TEST or use git clone
 	Vagrantfile
 	Docker-compose.yml
-	rs_cu_v311.tar
+	
 	** The last file is the rocket server container image.
 	*** EDIT the Vagrantfile with the correct IP addresses for the site.
 	
